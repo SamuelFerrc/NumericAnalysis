@@ -1,0 +1,13 @@
+Resultados do Método da Bisseção
+
+=== Caso 1 ===
+Início: -1.0
+Fim: 1.0
+Margem de erro: 0.0001
+f(mid): -3.661716124936376e-05
+Raiz aproximada: 0.35741720200879645
+Erro final: 3.661716124936376e-05
+Intervalo final: [-1.0, 0.35741720200879645]
+Número de iterações: 7
+Tabela salva em tabela_caso1.csv
+
