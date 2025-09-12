@@ -1,13 +1,35 @@
 Resultados do Método da Bisseção
 
 === Caso 1 ===
-Início: -1.0
-Fim: 1.0
-Margem de erro: 0.0001
-f(mid): -3.661716124936376e-05
-Raiz aproximada: 0.35741720200879645
-Erro final: 3.661716124936376e-05
-Intervalo final: [-1.0, 0.35741720200879645]
-Número de iterações: 7
+Início: 2
+Fim: 3
+Margem de erro: 1e-06
+f(mid): -2.3751246569503337e-07
+Raiz aproximada: 2.6457512661789533
+Erro final: 2.3751246569503337e-07
+Intervalo final: [2.6457512661789533, 3.0]
+Número de iterações: 6
 Tabela salva em tabela_caso1.csv
+
+=== Caso 2 ===
+Início: 0
+Fim: 1
+Margem de erro: 1e-06
+f(mid): -7.788293547861258e-07
+Raiz aproximada: 0.3574032591820905
+Erro final: 7.788293547861258e-07
+Intervalo final: [0.0, 0.3574032591820905]
+Número de iterações: 6
+Tabela salva em tabela_caso2.csv
+
+=== Caso 3 ===
+Início: -1
+Fim: 0
+Margem de erro: 1e-06
+f(mid): 2.157213918607681e-07
+Raiz aproximada: -0.8654739613985591
+Erro final: 2.157213918607681e-07
+Intervalo final: [-1.0, -0.8654739613985591]
+Número de iterações: 8
+Tabela salva em tabela_caso3.csv
 
