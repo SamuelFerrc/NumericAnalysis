@@ -27,7 +27,7 @@ casos_teste = [
 ]
 
 
-def bisseccao(f, inicio: float, fim: float, margem: float):
+def PosicaoFalsa(f, inicio: float, fim: float, margem: float):
     a = float(inicio)
     b = float(fim)
     erro = float("inf")
@@ -90,7 +90,7 @@ for caso in casos_teste:
     fim = caso["fim"]
     margem = caso["margem"]
 
-    resultado = bisseccao(f, inicio, fim, margem)
+    resultado = PosicaoFalsa(f, inicio, fim, margem)
     if resultado is None:
         continue
 

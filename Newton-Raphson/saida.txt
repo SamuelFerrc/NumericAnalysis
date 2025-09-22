@@ -1,0 +1,29 @@
+Resultados do Método de Newton-Raphson
+
+=== Caso 1 ===
+Chute inicial: 3
+Margem de erro: 1e-06
+f(x_final): 6.7274452675292196e-09
+Raiz aproximada: 2.6457513110645907
+Erro final: 6.7274452675292196e-09
+Número de iterações: 4
+Tabela salva em tabela_caso1.csv
+
+=== Caso 2 ===
+Chute inicial: 0.5
+Margem de erro: 1e-06
+f(x_final): 1.1638401353764039e-10
+Raiz aproximada: 0.3574029561813889
+Erro final: 1.1638401353764039e-10
+Número de iterações: 4
+Tabela salva em tabela_caso2.csv
+
+=== Caso 3 ===
+Chute inicial: -0.5
+Margem de erro: 1e-06
+f(x_final): -2.8106184046805538e-11
+Raiz aproximada: -0.8654740331016144
+Erro final: 2.8106184046805538e-11
+Número de iterações: 6
+Tabela salva em tabela_caso3.csv
+

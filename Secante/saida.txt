@@ -1,0 +1,29 @@
+Resultados do Método da Secante
+
+=== Caso 1 ===
+Chute inicial x0: 2, x1: 3
+Margem de erro: 1e-06
+f(x_final): -3.490541189421492e-13
+Raiz aproximada: 2.6457513110645245
+Erro final: 1.3820937283526291e-08
+Número de iterações: 5
+Tabela salva em tabela_caso1.csv
+
+=== Caso 2 ===
+Chute inicial x0: 0, x1: 1
+Margem de erro: 1e-06
+f(x_final): -1.7763568394002505e-15
+Raiz aproximada: 0.35740295618138956
+Erro final: 6.366088767251199e-10
+Número de iterações: 6
+Tabela salva em tabela_caso2.csv
+
+=== Caso 3 ===
+Chute inicial x0: -1, x1: 0
+Margem de erro: 1e-06
+f(x_final): -1.0009770790020411e-12
+Raiz aproximada: -0.8654740331019471
+Erro final: 1.872130195312849e-08
+Número de iterações: 8
+Tabela salva em tabela_caso3.csv
+
