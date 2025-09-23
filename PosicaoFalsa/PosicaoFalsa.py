@@ -1,31 +1,23 @@
 import matplotlib.pyplot as plt
 import math
 import pandas as pd
+import json
 
-casos_teste = [
-    {
-        "id": 1,
-        "f": lambda x: pow(x, 2) - 7,
-        "inicio": 2,
-        "fim": 3,
-        "margem": 1e-6
-    },
-    {
-        "id": 2,
-        "f": lambda x: math.exp(x) - 4 * x,
-        "inicio": 0,
-        "fim": 1,
-        "margem": 1e-6
-    },
-    {
-        "id": 3,
-        "f": lambda x: pow(x, 3) + math.cos(x),
-        "inicio": -1,
-        "fim": 0,
-        "margem": 1e-6
-    }
-]
+def ler_casos_arquivo(nome_arquivo):
+    with open(nome_arquivo, "r", encoding="utf-8") as f:
+        dados = json.load(f)
+    casos = []
+    for caso in dados:
+        casos.append({
+            "id": caso["id"],
+            "f": eval(f"lambda x: {caso['f']}"),
+            "inicio": caso["inicio"],
+            "fim": caso["fim"],
+            "margem": caso["margem"]
+        })
+    return casos
 
+casos_teste = ler_casos_arquivo("entrada.txt")
 
 def PosicaoFalsa(f, inicio: float, fim: float, margem: float):
     a = float(inicio)
@@ -74,13 +66,6 @@ def PosicaoFalsa(f, inicio: float, fim: float, margem: float):
 
     return [encontrado, mid, erro, a, b, margem, iteracoes, mids, erros, tabela]
 
-
-
-
-
-
-
-
 resultados = []
 
 for caso in casos_teste:
@@ -120,11 +105,11 @@ for caso in casos_teste:
 
     df = pd.DataFrame(tabela)
     df.to_csv(f"tabela_caso{idx}.csv", index=False, float_format="%.6f", encoding="utf-8-sig")
-    with open(f"tabela_caso{idx}.txt", "w", encoding="utf-8") as f:
-        f.write(df.to_string(index=False, float_format="%.6f"))
+    with open(f"tabela_caso{idx}.txt", "w", encoding="utf-8") as f_out:
+        f_out.write(df.to_string(index=False, float_format="%.6f"))
 
 with open("saida.txt", "w", encoding="utf-8") as arq:
-    arq.write("Resultados do Método da Bisseção\n\n")
+    arq.write("Resultados do Método da Posição Falsa\n\n")
     for idx, inicio, fim, margem, res in resultados:
         arq.write(f"=== Caso {idx} ===\n")
         arq.write(f"Início: {inicio}\n")
@@ -135,7 +120,6 @@ with open("saida.txt", "w", encoding="utf-8") as arq:
         arq.write(f"Erro final: {res[2]}\n")
         arq.write(f"Intervalo final: [{res[3]}, {res[4]}]\n")
         arq.write(f"Número de iterações: {len(res[6])}\n")
-        arq.write(f"Tabela salva em tabela_caso{idx}.csv\n")
-        arq.write("\n")
+        arq.write(f"Tabela salva em tabela_caso{idx}.csv\n\n")
 
 print("Finalizado.")

@@ -2,22 +2,22 @@
     {
         "id": 1,
         "f": "x**2 - 7",
-        "inicio": 2,
-        "fim": 3,
+        "df": "2*x",
+        "x0": 3,
         "margem": 1e-6
     },
     {
         "id": 2,
         "f": "math.exp(x) - 4*x",
-        "inicio": 0,
-        "fim": 1,
+        "df": "math.exp(x) - 4",
+        "x0": 0.5,
         "margem": 1e-6
     },
     {
         "id": 3,
         "f": "x**3 + math.cos(x)",
-        "inicio": -1,
-        "fim": 0,
+        "df": "3*x**2 - math.sin(x)",
+        "x0": -0.5,
         "margem": 1e-6
     }
 ]

@@ -1,32 +1,27 @@
 import matplotlib.pyplot as plt
 import math
 import pandas as pd
+import json
 
-casos_teste = [
-    {
-        "id": 1,
-        "f": lambda x: pow(x, 2) - 7,
-        "df": lambda x: 2*x,
-        "x0": 3,
-        "margem": 1e-6
-    },
-    {
-        "id": 2,
-        "f": lambda x: math.exp(x) - 4 * x,
-        "df": lambda x: math.exp(x) - 4,
-        "x0": 0.5,
-        "margem": 1e-6
-    },
-    {
-        "id": 3,
-        "f": lambda x: pow(x, 3) + math.cos(x),
-        "df": lambda x: 3*pow(x, 2) - math.sin(x),
-        "x0": -0.5,
-        "margem": 1e-6
-    }
-]
+# Função para ler o arquivo de entrada
+def ler_casos_arquivo(nome_arquivo):
+    with open(nome_arquivo, "r", encoding="utf-8") as f:
+        dados = json.load(f)
+    casos = []
+    for caso in dados:
+        casos.append({
+            "id": caso["id"],
+            "f": eval(f"lambda x: {caso['f']}"),
+            "df": eval(f"lambda x: {caso['df']}"),
+            "x0": caso["x0"],
+            "margem": caso["margem"]
+        })
+    return casos
 
+# Lendo os casos
+casos_teste = ler_casos_arquivo("entrada.txt")
 
+# --- Função Newton-Raphson ---
 def newton_raphson(f, df, x0, tol=1e-6, maxiter=100):
     iteracoes = []
     aproximacoes = []
@@ -63,7 +58,7 @@ def newton_raphson(f, df, x0, tol=1e-6, maxiter=100):
 
     raise ValueError("Não convergiu após o número máximo de iterações.")
 
-
+# --- Execução dos casos ---
 resultados = []
 
 for caso in casos_teste:
@@ -98,10 +93,10 @@ for caso in casos_teste:
     plt.savefig(f"grafico_caso{idx}.png")
     plt.close()
 
-    df = pd.DataFrame(tabela)
-    df.to_csv(f"tabela_caso{idx}.csv", index=False, float_format="%.6f", encoding="utf-8-sig")
-    with open(f"tabela_caso{idx}.txt", "w", encoding="utf-8") as f:
-        f.write(df.to_string(index=False, float_format="%.6f"))
+    df_tab = pd.DataFrame(tabela)
+    df_tab.to_csv(f"tabela_caso{idx}.csv", index=False, float_format="%.6f", encoding="utf-8-sig")
+    with open(f"tabela_caso{idx}.txt", "w", encoding="utf-8") as f_out:
+        f_out.write(df_tab.to_string(index=False, float_format="%.6f"))
 
 with open("saida.txt", "w", encoding="utf-8") as arq:
     arq.write("Resultados do Método de Newton-Raphson\n\n")

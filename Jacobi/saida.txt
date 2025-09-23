@@ -1,0 +1,27 @@
+Resultados do Método de Jacobi
+
+=== Caso 1 ===
+Chute inicial: [0. 0. 0. 0. 0. 0.]
+Margem de erro: 1e-06
+Raiz aproximada: [38.09523718 14.28571299  4.76190385 38.09523718 14.28571299  4.76190385]
+Erro final: 8.497618395608697e-07
+Número de iterações: 33
+Tabela salva em tabela_caso1.csv
+
+=== Caso 2 ===
+Chute inicial: [0. 0. 0.]
+Margem de erro: 1e-06
+Raiz aproximada: [2.23012402 1.40167209 1.14644246]
+Erro final: 8.167289606841877e-07
+Número de iterações: 33
+Tabela salva em tabela_caso2.csv
+
+=== Caso 3 ===
+Chute inicial: [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+Margem de erro: 1e-06
+Raiz aproximada: [35.71428469 50.44642708 66.07142755 42.4107128  49.99999795 63.83928422
+ 33.9285704  43.30356994 39.28571326]
+Erro final: 9.313225746154785e-07
+Número de iterações: 50
+Tabela salva em tabela_caso3.csv
+

@@ -1,29 +1,23 @@
 import matplotlib.pyplot as plt
 import math
 import pandas as pd
-casos_teste = [
-    {
-        "id": 1,
-        "f": lambda x: pow(x, 2) - 7,
-        "x0": 2,
-        "x1": 3,
-        "margem": 1e-6
-    },
-    {
-        "id": 2,
-        "f": lambda x: math.exp(x) - 4 * x,
-        "x0": 0,
-        "x1": 1,
-        "margem": 1e-6
-    },
-    {
-        "id": 3,
-        "f": lambda x: pow(x, 3) + math.cos(x),
-        "x0": -1,
-        "x1": 0,
-        "margem": 1e-6
-    }
-]
+import json
+
+def ler_casos_arquivo(nome_arquivo):
+    with open(nome_arquivo, "r", encoding="utf-8") as f:
+        dados = json.load(f)
+    casos = []
+    for caso in dados:
+        casos.append({
+            "id": caso["id"],
+            "f": eval(f"lambda x: {caso['f']}"),
+            "x0": caso["x0"],
+            "x1": caso["x1"],
+            "margem": caso["margem"]
+        })
+    return casos
+
+casos_teste = ler_casos_arquivo("entrada.txt")
 
 def secante(f, x0, x1, tol=1e-6, maxiter=100):
     iteracoes = []
@@ -97,8 +91,8 @@ for caso in casos_teste:
 
     df = pd.DataFrame(tabela)
     df.to_csv(f"tabela_caso{idx}.csv", index=False, float_format="%.6f", encoding="utf-8-sig")
-    with open(f"tabela_caso{idx}.txt", "w", encoding="utf-8") as f:
-        f.write(df.to_string(index=False, float_format="%.6f"))
+    with open(f"tabela_caso{idx}.txt", "w", encoding="utf-8") as f_out:
+        f_out.write(df.to_string(index=False, float_format="%.6f"))
 
 with open("saida.txt", "w", encoding="utf-8") as arq:
     arq.write("Resultados do Método da Secante\n\n")
@@ -112,6 +106,5 @@ with open("saida.txt", "w", encoding="utf-8") as arq:
         arq.write(f"Erro final: {erro_final}\n")
         arq.write(f"Número de iterações: {len(iteracoes)}\n")
         arq.write(f"Tabela salva em tabela_caso{idx}.csv\n\n")
-
 
 print("Finalizado.")

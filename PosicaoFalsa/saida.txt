@@ -1,4 +1,4 @@
-Resultados do Método da Bisseção
+Resultados do Método da Posição Falsa
 
 === Caso 1 ===
 Início: 2

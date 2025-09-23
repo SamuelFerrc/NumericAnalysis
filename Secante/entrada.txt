@@ -2,22 +2,22 @@
     {
         "id": 1,
         "f": "x**2 - 7",
-        "inicio": 2,
-        "fim": 3,
+        "x0": 2,
+        "x1": 3,
         "margem": 1e-6
     },
     {
         "id": 2,
         "f": "math.exp(x) - 4*x",
-        "inicio": 0,
-        "fim": 1,
+        "x0": 0,
+        "x1": 1,
         "margem": 1e-6
     },
     {
         "id": 3,
         "f": "x**3 + math.cos(x)",
-        "inicio": -1,
-        "fim": 0,
+        "x0": -1,
+        "x1": 0,
         "margem": 1e-6
     }
 ]

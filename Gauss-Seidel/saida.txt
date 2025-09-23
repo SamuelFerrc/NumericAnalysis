@@ -1,0 +1,27 @@
+Resultados do Método de Gauss-Seidel
+
+=== Caso 1 ===
+Chute inicial: [0. 0. 0. 0. 0. 0.]
+Margem de erro: 1e-06
+Raiz aproximada: [38.09523776 14.285714    4.76190464 38.09523789 14.28571411  4.76190469]
+Erro final: 5.815423449462287e-07
+Número de iterações: 18
+Tabela salva em tabela_caso1.csv
+
+=== Caso 2 ===
+Chute inicial: [0. 0. 0.]
+Margem de erro: 1e-06
+Raiz aproximada: [2.23012479 1.40167312 1.14644324]
+Erro final: 9.497999933216761e-07
+Número de iterações: 18
+Tabela salva em tabela_caso2.csv
+
+=== Caso 3 ===
+Chute inicial: [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+Margem de erro: 1e-06
+Raiz aproximada: [35.71428504 50.4464279  66.07142823 42.41071361 49.99999932 63.83928538
+ 33.92857109 43.30357109 39.28571412]
+Erro final: 6.752088665962219e-07
+Número de iterações: 27
+Tabela salva em tabela_caso3.csv
+
